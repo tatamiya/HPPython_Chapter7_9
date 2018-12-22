@@ -1,0 +1,2 @@
+# HPPython_Chapter7_9
+ハイパフォーマンスPython輪読会用
