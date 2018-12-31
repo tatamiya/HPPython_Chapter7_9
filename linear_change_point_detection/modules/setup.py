@@ -1,0 +1,16 @@
+from distutils.core import setup
+from distutils.extension import Extension
+from Cython.Distutils import build_ext
+import numpy
+
+# for notes on compiler flags e.g. using
+# export CFLAGS=-O2
+# so gcc has -O2 passed (even though it doesn't make the code faster!)
+# http://docs.python.org/install/index.html
+
+setup(
+    cmdclass={'build_ext': build_ext},
+    #ext_modules=[Extension("cython_func", ["cpa_openmp_tmp.pyx"], extra_compile_args=[
+    #                       '-fopenmp'], extra_link_args=['-fopenmp'])], include_dirs = [numpy.get_include()]
+    ext_modules=[Extension("cython_func", ["cpa_partly_cython.pyx"], include_dirs = [numpy.get_include()])]
+)
